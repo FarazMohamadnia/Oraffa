@@ -785,7 +785,7 @@ export default function Carousel({
           disabled={atStart}
           onClick={() => engineRef.current?.step(-1)}
         >
-          <Chevron flip />
+          <Chevron />
         </button>
       )}
 
@@ -851,7 +851,7 @@ export default function Carousel({
           disabled={atEnd}
           onClick={() => engineRef.current?.step(1)}
         >
-          <Chevron />
+          <Chevron flip />
         </button>
       )}
     </div>
