@@ -31,7 +31,7 @@ export function AboutPage() {
   const testimonialCarouselItems = aboutTestimonials.map((item) => (
     <article
       key={item.id}
-      className="flex h-full min-h-[280px] flex-col justify-between bg-[linear-gradient(165deg,#ffffff_0%,#f3fafb_100%)] p-6 text-right md:p-8"
+      className="flex h-full flex-col justify-between bg-[linear-gradient(165deg,#ffffff_0%,#f3fafb_100%)] p-6 text-right md:p-7"
     >
       <div>
         <div className="mb-5 flex items-center gap-3">
@@ -198,10 +198,10 @@ export function AboutPage() {
             <Carousel
               items={testimonialCarouselItems}
               baseWidth="100%"
-              aspectRatio={1.35}
+              aspectRatio={1.7}
               radius={24}
-              gap={20}
-              peek={36}
+              gap={18}
+              peek={40}
               effect="slide"
               indicator="dots"
               arrows
