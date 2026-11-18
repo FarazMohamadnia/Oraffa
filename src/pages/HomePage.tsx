@@ -28,48 +28,42 @@ export function HomePage() {
     <>
       <section className="relative min-h-[min(92svh,920px)] overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={brand.heroImage}
-            alt="فضای آموزشی مؤسسه عرفا"
-            className="h-full w-full object-cover"
+          <LaserFlow
+            color="#0D5D90"
+            theme="light"
+            intensity={1.05}
+            fog={0.28}
+            dust={0.55}
+            speed={0.75}
+            beamWidth={0.7}
+            className="h-full w-full"
+            style={{ width: '100%', height: '100%' }}
           />
-          <div className="absolute inset-0 opacity-70">
-            <LaserFlow
-              color="#0D5D90"
-              theme="dark"
-              intensity={0.9}
-              fog={0.25}
-              dust={0.4}
-              speed={0.7}
-              className="h-full w-full"
-              style={{ width: '100%', height: '100%' }}
-            />
-          </div>
-          <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(7,28,42,0.78)_0%,rgba(7,28,42,0.55)_42%,rgba(7,28,42,0.28)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(243,247,250,0.08)_0%,rgba(243,247,250,0.42)_48%,rgba(243,247,250,0.92)_100%)]" />
         </div>
 
         <div className="container-oraffa relative flex min-h-[min(92svh,920px)] flex-col justify-center py-16">
-          <div className="max-w-3xl text-white">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-sm font-semibold text-white backdrop-blur">
-              <Sparkles className="h-4 w-4 text-teal-soft" />
+          <div className="max-w-3xl">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/55 px-3 py-1.5 text-sm font-semibold text-brand-deep backdrop-blur">
+              <Sparkles className="h-4 w-4 text-teal" />
               مؤسسه علمی آموزشی
             </div>
 
-            <div className="mb-5 flex justify-start text-white [&_*]:!text-[clamp(2.8rem,8vw,4.8rem)] [&_*]:!text-white">
+            <div className="mb-5 flex justify-start [&_*]:!text-[clamp(2.8rem,8vw,4.8rem)]">
               <TrueFocus
                 sentence={brand.name}
                 blurAmount={6}
-                borderColor="#7fdad7"
-                glowColor="rgba(127,218,215,0.45)"
+                borderColor="#139895"
+                glowColor="rgba(19,152,149,0.45)"
                 animationDuration={0.45}
                 pauseBetweenAnimations={1.2}
               />
             </div>
 
-            <h1 className="text-balance text-4xl font-extrabold leading-[1.15] sm:text-5xl md:text-6xl">
+            <h1 className="display-title text-balance text-4xl sm:text-5xl md:text-6xl">
               {brand.tagline}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-8 text-white/85 md:text-lg">
+            <p className="muted mt-5 max-w-xl text-base leading-8 md:text-lg">
               {brand.description}
             </p>
 
@@ -89,10 +83,7 @@ export function HomePage() {
                   </span>
                 </StarBorder>
               </Magnet>
-              <Link
-                to="/contact"
-                className="inline-flex rounded-full border border-white/35 bg-white/10 px-5 py-3 text-sm font-bold text-white backdrop-blur transition hover:bg-white/20"
-              >
+              <Link to="/contact" className="btn-ghost">
                 درخواست مشاوره رایگان
               </Link>
             </div>
