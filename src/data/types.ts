@@ -5,6 +5,7 @@ export interface Department {
   title: string
   description: string
   href: string
+  image: string
 }
 
 export interface Course {
@@ -23,6 +24,7 @@ export interface Course {
   free?: boolean
   summary: string
   description: string
+  image: string
 }
 
 export interface Instructor {
@@ -30,6 +32,7 @@ export interface Instructor {
   name: string
   title: string
   bio: string
+  image: string
 }
 
 export interface Testimonial {
@@ -37,6 +40,7 @@ export interface Testimonial {
   name: string
   role: string
   quote: string
+  image?: string
 }
 
 export interface BlogPost {
@@ -47,6 +51,14 @@ export interface BlogPost {
   content: string
   date: string
   category: string
+  image: string
+}
+
+export interface GalleryItem {
+  id: string
+  src: string
+  alt: string
+  caption: string
 }
 
 export interface SiteContact {

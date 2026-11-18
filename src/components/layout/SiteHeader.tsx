@@ -42,9 +42,11 @@ export function SiteHeader() {
     >
       <div className="container-oraffa flex h-[72px] items-center justify-between gap-4">
         <Link to="/" className="group flex items-center gap-3" aria-label={brand.name}>
-          <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand to-teal text-lg font-extrabold text-white shadow-[0_10px_24px_rgba(13,93,144,0.28)] transition-transform duration-200 group-hover:-translate-y-0.5">
-            ع
-          </span>
+          <img
+            src={brand.logo}
+            alt={brand.name}
+            className="h-11 w-11 rounded-2xl object-cover shadow-[0_10px_24px_rgba(13,93,144,0.2)] transition-transform duration-200 group-hover:-translate-y-0.5"
+          />
           <span className="leading-tight">
             <span className="block text-xl font-extrabold tracking-tight text-ink">{brand.name}</span>
             <span className="block text-xs font-medium text-ink-muted">{brand.englishName}</span>

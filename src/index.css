@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+@import "@fontsource-variable/vazirmatn/wght.css";
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Vazirmatn Variable", "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Vazirmatn Variable", "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
 
   --color-brand: #0d5d90;
   --color-brand-deep: #08486f;

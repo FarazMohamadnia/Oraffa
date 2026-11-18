@@ -17,12 +17,20 @@ export function BlogPage() {
             <AnimatedContent key={post.id} delay={index * 0.08} distance={24}>
               <Link
                 to={`/blog/${post.slug}`}
-                className="block h-full rounded-[1.75rem] border border-line bg-white/85 p-6 transition hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(13,93,144,0.1)]"
+                className="group block h-full overflow-hidden rounded-[1.75rem] border border-line bg-white/85 transition hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(13,93,144,0.1)]"
               >
-                <div className="text-xs font-bold text-teal-deep">{post.category}</div>
-                <h2 className="mt-3 text-xl font-extrabold leading-8 text-ink">{post.title}</h2>
-                <p className="muted mt-3 text-sm leading-7">{post.excerpt}</p>
-                <div className="mt-5 text-xs font-medium text-ink-muted">{post.date}</div>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                  loading="lazy"
+                />
+                <div className="p-6">
+                  <div className="text-xs font-bold text-teal-deep">{post.category}</div>
+                  <h2 className="mt-3 text-xl font-extrabold leading-8 text-ink">{post.title}</h2>
+                  <p className="muted mt-3 text-sm leading-7">{post.excerpt}</p>
+                  <div className="mt-5 text-xs font-medium text-ink-muted">{post.date}</div>
+                </div>
               </Link>
             </AnimatedContent>
           ))}

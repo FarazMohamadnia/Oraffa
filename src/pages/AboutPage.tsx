@@ -1,6 +1,8 @@
 import Threads from '@/components/Threads'
 import AnimatedContent from '@/components/AnimatedContent'
+import { MediaReveal } from '@/components/ui/MediaReveal'
 import { SectionHeading } from '@/components/ui/SectionHeading'
+import { gallery } from '@/data/site'
 import { Link } from 'react-router-dom'
 
 const services = [
@@ -22,8 +24,16 @@ export function AboutPage() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-line">
-        <div className="absolute inset-0 opacity-50">
-          <Threads color={[0.05, 0.36, 0.56]} amplitude={0.85} distance={0.35} className="h-full w-full" />
+        <div className="absolute inset-0">
+          <img
+            src="/images/gallery/campus-1.jpg"
+            alt="درباره مؤسسه عرفا"
+            className="h-full w-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(243,247,250,0.7),rgba(243,247,250,0.95))]" />
+          <div className="absolute inset-0 opacity-40">
+            <Threads color={[0.05, 0.36, 0.56]} amplitude={0.85} distance={0.35} className="h-full w-full" />
+          </div>
         </div>
         <div className="container-oraffa relative section-pad">
           <SectionHeading
@@ -35,7 +45,7 @@ export function AboutPage() {
       </section>
 
       <section className="section-pad">
-        <div className="container-oraffa grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="container-oraffa grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <AnimatedContent distance={28} duration={0.65}>
             <div className="space-y-5 text-base leading-8 text-ink-muted">
               <p>
@@ -53,19 +63,44 @@ export function AboutPage() {
             </div>
           </AnimatedContent>
 
-          <AnimatedContent distance={28} delay={0.1} duration={0.65}>
-            <div className="rounded-[1.75rem] border border-line bg-white/80 p-6 md:p-8">
-              <h3 className="text-xl font-extrabold text-ink">خدمات ما</h3>
-              <ul className="mt-5 space-y-3">
-                {services.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-7 text-ink-muted">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </AnimatedContent>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <MediaReveal
+              src={gallery[0].src}
+              alt={gallery[0].alt}
+              caption={gallery[0].caption}
+              imgClassName="aspect-[4/5]"
+            />
+            <MediaReveal
+              src={gallery[1].src}
+              alt={gallery[1].alt}
+              caption={gallery[1].caption}
+              delay={0.08}
+              imgClassName="aspect-[4/5]"
+              className="sm:mt-8"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad pt-0">
+        <div className="container-oraffa grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[1.75rem] border border-line bg-white/80 p-6 md:p-8">
+            <h3 className="text-xl font-extrabold text-ink">خدمات ما</h3>
+            <ul className="mt-5 space-y-3">
+              {services.map((item) => (
+                <li key={item} className="flex gap-3 text-sm leading-7 text-ink-muted">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-teal" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <MediaReveal
+            src="/images/gallery/campus-3.jpg"
+            alt="خدمات آموزشی عرفا"
+            caption="از کلاس حضوری تا مسیر یادگیری شخصی‌سازی‌شده"
+            imgClassName="aspect-[16/10]"
+          />
         </div>
       </section>
 

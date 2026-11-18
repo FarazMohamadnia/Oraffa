@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import AnimatedContent from '@/components/AnimatedContent'
 import Magnet from '@/components/Magnet'
+import TiltedCard from '@/components/TiltedCard'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { formatPrice, getCourseBySlug, getDepartmentTitle } from '@/data/site'
 
@@ -21,11 +22,19 @@ export function CourseDetailPage() {
 
   return (
     <section className="section-pad">
-      <div className="container-oraffa grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="container-oraffa grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <div className="eyebrow mb-3">{getDepartmentTitle(course.department)}</div>
           <h1 className="display-title text-4xl md:text-5xl">{course.title}</h1>
           <p className="muted mt-5 max-w-2xl text-base leading-8 md:text-lg">{course.description}</p>
+
+          <AnimatedContent distance={20} duration={0.55} className="mt-8 overflow-hidden rounded-[1.75rem]">
+            <img
+              src={course.image}
+              alt={course.title}
+              className="aspect-[16/10] w-full object-cover"
+            />
+          </AnimatedContent>
 
           <AnimatedContent distance={20} duration={0.55} className="mt-8 grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-line bg-white/80 p-4">
@@ -42,6 +51,20 @@ export function CourseDetailPage() {
         </div>
 
         <aside className="h-fit rounded-[1.75rem] border border-line bg-white/90 p-6 shadow-[0_20px_40px_rgba(13,93,144,0.08)]">
+          <div className="mb-5 flex justify-center">
+            <TiltedCard
+              imageSrc={course.image}
+              altText={course.title}
+              containerHeight="220px"
+              containerWidth="100%"
+              imageHeight="200px"
+              imageWidth="100%"
+              rotateAmplitude={10}
+              scaleOnHover={1.05}
+              showTooltip={false}
+              className="w-full"
+            />
+          </div>
           <SectionHeading title="ثبت‌نام و مشاوره" />
           <div className="mt-4">
             {course.free ? (

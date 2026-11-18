@@ -2,6 +2,7 @@ import type {
   BlogPost,
   Course,
   Department,
+  GalleryItem,
   Instructor,
   SiteContact,
   Testimonial,
@@ -15,6 +16,8 @@ export const brand = {
     'مؤسسه عرفا با تکیه بر اساتید مجرب، آموزش‌های کاربردی و محیطی پویا، مسیر یادگیری را برای علاقه‌مندان هموار کرده است.',
   primary: '#0D5D90',
   secondary: '#139895',
+  logo: '/images/brand/logo.png',
+  heroImage: '/images/brand/hero.jpg',
 }
 
 export const contact: SiteContact = {
@@ -31,6 +34,7 @@ export const departments: Department[] = [
     description:
       'مهارت‌های حقوقی کاربردی از لایحه‌نویسی تا تنظیم موافقت‌نامه داوری برای حل اختلافات.',
     href: '/courses?dept=law',
+    image: '/images/courses/layehe-nevisi.png',
   },
   {
     id: 'management',
@@ -38,6 +42,7 @@ export const departments: Department[] = [
     description:
       'دوره‌های مدیرعامل، فروش و مدیریت کارخانه برای رهبران و مدیران حرفه‌ای.',
     href: '/courses?dept=management',
+    image: '/images/courses/ceo-pro.png',
   },
   {
     id: 'language',
@@ -45,6 +50,7 @@ export const departments: Department[] = [
     description:
       'آموزش زبان‌های فرانسه و چینی با مسیر یادگیری هدفمند و پشتیبانی آموزشی.',
     href: '/courses?dept=language',
+    image: '/images/courses/french.png',
   },
 ]
 
@@ -64,6 +70,7 @@ export const courses: Course[] = [
     summary: 'مهارت نگارش لایحه حقوقی حرفه‌ای برای پرونده‌های واقعی.',
     description:
       'در این دوره با اصول ساختار لایحه، استدلال حقوقی، استناد به قوانین و نگارش حرفه‌ای آشنا می‌شوید تا بتوانید اسناد حقوقی دقیق و قابل دفاع بنویسید.',
+    image: '/images/courses/layehe-nevisi.png',
   },
   {
     id: '2',
@@ -81,6 +88,7 @@ export const courses: Course[] = [
     summary: 'تنظیم حرفه‌ای موافقت‌نامه داوری برای حل اختلافات تجاری و حقوقی.',
     description:
       'این دوره به شما کمک می‌کند موافقت‌نامه‌های داوری استاندارد، شفاف و قابل اجرا تنظیم کنید و اختلافات را با رویکردی حرفه‌ای مدیریت نمایید.',
+    image: '/images/courses/davari-agreement.png',
   },
   {
     id: '3',
@@ -97,6 +105,7 @@ export const courses: Course[] = [
     summary: 'مهارت‌های رهبری، تصمیم‌گیری و مدیریت استراتژیک برای مدیرعاملان.',
     description:
       'مسیر تبدیل‌شدن به یک مدیرعامل حرفه‌ای با تمرکز بر رهبری تیم، استراتژی کسب‌وکار، تصمیم‌گیری داده محور و مدیریت عملکرد سازمان.',
+    image: '/images/courses/ceo-pro.png',
   },
   {
     id: '4',
@@ -114,6 +123,7 @@ export const courses: Course[] = [
     summary: 'ساخت سیستم فروش، مدیریت تیم و افزایش نرخ تبدیل.',
     description:
       'یاد بگیرید چگونه قیف فروش را طراحی کنید، تیم فروش را هدایت کنید و فرآیندهای فروش را به نتایج پایدار تبدیل کنید.',
+    image: '/images/courses/sales-manager.png',
   },
   {
     id: '5',
@@ -130,6 +140,7 @@ export const courses: Course[] = [
     summary: 'مدیریت عملیات، کیفیت و بهره‌وری در فضای تولید.',
     description:
       'این دوره مهارت‌های مدیریت کارخانه، کنترل کیفیت، بهینه‌سازی فرآیند و رهبری تیم‌های عملیاتی را پوشش می‌دهد.',
+    image: '/images/courses/factory-manager.png',
   },
   {
     id: '6',
@@ -147,6 +158,7 @@ export const courses: Course[] = [
     summary: 'شروع حرفه‌ای زبان چینی از پایه با تمرکز بر مکالمه و نوشتار.',
     description:
       'دوره مقدماتی زبان چینی برای علاقه‌مندان به یادگیری کاربردی؛ از تلفظ و واژگان پایه تا ساخت جملات روزمره.',
+    image: '/images/courses/chinese-beginner.png',
   },
   {
     id: '7',
@@ -163,6 +175,7 @@ export const courses: Course[] = [
     summary: 'یادگیری فرانسه برای تحصیل، مهاجرت و ارتباطات بین‌المللی.',
     description:
       'مسیر یادگیری زبان فرانسه با رویکرد کاربردی، تمرین مهارت‌های چهارگانه و آمادگی برای سطوح بالاتر.',
+    image: '/images/courses/french.png',
   },
 ]
 
@@ -172,18 +185,21 @@ export const instructors: Instructor[] = [
     name: 'دکتر بهزاد نزاکت‌گو',
     title: 'دکترای آموزش زبان انگلیسی',
     bio: 'استاد باتجربه در حوزه آموزش زبان با تمرکز بر یادگیری کاربردی و آمادگی آزمون‌های بین‌المللی.',
+    image: '/images/instructors/behzad.jpg',
   },
   {
     id: '2',
     name: 'سما اسدی',
     title: 'مدرس حرفه‌ای',
     bio: 'مدرس دوره‌های مهارتی با رویکرد عملی و همراهی مستمر فراگیران در مسیر یادگیری.',
+    image: '/images/instructors/sama.png',
   },
   {
     id: '3',
     name: 'پانیذ رحیمی',
     title: 'مدرس حرفه‌ای',
     bio: 'تدریس تخصصی با تاکید بر تجربه واقعی، تعامل کلاسی و پیشرفت مرحله‌به‌مرحله دانشجویان.',
+    image: '/images/instructors/paniz.png',
   },
 ]
 
@@ -194,6 +210,7 @@ export const testimonials: Testimonial[] = [
     role: 'دانشجوی دپارتمان مدیریت',
     quote:
       'دوره‌های عرفا دقیقاً همان چیزی بود که برای ارتقای مسیر شغلی‌ام نیاز داشتم؛ کاربردی، منظم و با پشتیبانی واقعی.',
+    image: '/images/gallery/portrait-1.jpg',
   },
   {
     id: '2',
@@ -201,6 +218,7 @@ export const testimonials: Testimonial[] = [
     role: 'دانشجوی دپارتمان حقوق',
     quote:
       'کیفیت تدریس و محتوای به‌روز باعث شد لایحه‌نویسی را خیلی سریع‌تر و حرفه‌ای‌تر یاد بگیرم.',
+    image: '/images/gallery/portrait-2.jpg',
   },
   {
     id: '3',
@@ -208,6 +226,7 @@ export const testimonials: Testimonial[] = [
     role: 'دانشجوی دپارتمان زبان',
     quote:
       'فضای آموزشی پویا و اساتید مجرب عرفا مسیر یادگیری زبان را برای من لذت‌بخش و هدفمند کرد.',
+    image: '/images/gallery/portrait-3.jpg',
   },
 ]
 
@@ -220,6 +239,7 @@ export const blogPosts: BlogPost[] = [
       'اساتید مجرب، آموزش کاربردی و محیطی پویا؛ سه ستون مسیر یادگیری در عرفا.',
     date: '۱۴۰۴/۰۶/۳۰',
     category: 'معرفی',
+    image: '/images/blog/why-oraffa.jpg',
     content:
       'مؤسسه عرفا با هدف ایجاد بستری نوین برای یادگیری و رشد فردی و حرفه‌ای فعالیت می‌کند. ما تلاش می‌کنیم آموزش را از شکل سنتی فراتر ببریم و تجربه‌ای کاربردی و اثربخش برای دانشجویان فراهم کنیم. دوره‌های آموزشی در حوزه‌های زبان، حقوق و مدیریت با توجه به نیازهای روز طراحی شده‌اند.',
   },
@@ -231,6 +251,7 @@ export const blogPosts: BlogPost[] = [
       'از انتخاب دپارتمان تا تمرین مستمر؛ راهنمای کوتاه برای شروع هوشمندانه.',
     date: '۱۴۰۴/۰۷/۱۲',
     category: 'راهنما',
+    image: '/images/blog/learning-path.jpg',
     content:
       'انتخاب مسیر یادگیری باید بر اساس هدف شغلی، سطح فعلی و زمان در دسترس باشد. در عرفا با مشاوره تخصصی می‌توانید دپارتمان مناسب را انتخاب کنید، برنامه شخصی‌سازی‌شده بگیرید و با پشتیبانی مستمر پیشرفت خود را بسنجید.',
   },
@@ -242,8 +263,42 @@ export const blogPosts: BlogPost[] = [
       'ترکیب کلاس‌های حضوری و آنلاین چگونه کیفیت یادگیری را حفظ می‌کند؟',
     date: '۱۴۰۴/۰۸/۰۱',
     category: 'آموزش',
+    image: '/images/blog/hybrid-learning.jpg',
     content:
       'مدل ترکیبی به فراگیران اجازه می‌دهد بدون افت کیفیت، مسیر یادگیری را با سبک زندگی خود هماهنگ کنند. کلاس‌های غیرحضوری انعطاف زمانی می‌دهند و جلسات حضوری عمق تمرین و تعامل را افزایش می‌دهند.',
+  },
+]
+
+export const gallery: GalleryItem[] = [
+  {
+    id: '1',
+    src: '/images/gallery/campus-1.jpg',
+    alt: 'فضای آموزشی عرفا',
+    caption: 'محیط یادگیری پویا و حرفه‌ای',
+  },
+  {
+    id: '2',
+    src: '/images/gallery/campus-2.jpg',
+    alt: 'جلسات آموزشی',
+    caption: 'تعامل مؤثر در کلاس‌های حضوری',
+  },
+  {
+    id: '3',
+    src: '/images/gallery/campus-3.jpg',
+    alt: 'تجربه یادگیری',
+    caption: 'مسیر رشد فردی و شغلی',
+  },
+  {
+    id: '4',
+    src: '/images/gallery/campus-4.jpg',
+    alt: 'کارگاه‌های مهارتی',
+    caption: 'آموزش کاربردی برای بازار کار',
+  },
+  {
+    id: '5',
+    src: '/images/gallery/campus-5.jpg',
+    alt: 'همراهی اساتید',
+    caption: 'پشتیبانی مستمر در مسیر یادگیری',
   },
 ]
 
