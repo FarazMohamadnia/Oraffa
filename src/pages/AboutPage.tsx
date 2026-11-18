@@ -20,35 +20,43 @@ import {
 } from '@/data/about'
 
 export function AboutPage() {
-  const serviceCarouselItems = aboutServiceSlides.map((slide) => ({
-    id: slide.id,
-    title: slide.title,
-    description: slide.description,
-    image: slide.image,
-    alt: slide.title,
-  }))
+  const serviceCarouselItems = aboutServiceSlides.map((slide) => (
+    <article key={slide.id} className="flex h-full w-full flex-col overflow-hidden bg-[#0b334d]">
+      <div className="flex min-h-0 flex-1 items-center justify-center px-4 pt-4">
+        <img
+          src={slide.image}
+          alt={slide.title}
+          className="max-h-full max-w-full object-contain object-center"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div className="shrink-0 px-5 pb-5 pt-4 text-right">
+        <div className="text-lg font-extrabold text-white md:text-xl">{slide.title}</div>
+        <p className="mt-1 text-sm leading-7 text-white/80">{slide.description}</p>
+      </div>
+    </article>
+  ))
 
   const testimonialCarouselItems = aboutTestimonials.map((item) => (
     <article
       key={item.id}
-      className="flex h-full flex-col justify-between bg-[linear-gradient(165deg,#ffffff_0%,#f3fafb_100%)] p-6 text-right md:p-7"
+      className="flex h-full flex-col items-center justify-center gap-4 bg-[linear-gradient(165deg,#ffffff_0%,#f3fafb_100%)] px-5 py-6 text-center md:gap-5 md:px-7"
     >
-      <div>
-        <div className="mb-5 flex items-center gap-3">
-          <img
-            src={item.image}
-            alt={item.name}
-            className="h-14 w-14 rounded-full object-cover ring-2 ring-[#139895]/40"
-            loading="lazy"
-          />
-          <div>
-            <div className="font-extrabold text-ink">{item.name}</div>
-            <div className="text-sm font-semibold text-teal-deep">{item.role}</div>
-          </div>
-        </div>
-        <p className="text-base leading-8 text-ink-muted md:text-lg">«{item.quote}»</p>
+      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full bg-teal-soft ring-4 ring-[#139895]/25">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="h-full w-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      <div className="mt-6 text-4xl font-black leading-none text-brand/20">”</div>
+      <p className="max-w-[30ch] text-[0.95rem] leading-8 text-ink-muted md:text-base">«{item.quote}»</p>
+      <div>
+        <div className="font-extrabold text-ink">{item.name}</div>
+        <div className="mt-1 text-sm font-semibold text-teal-deep">{item.role}</div>
+      </div>
     </article>
   ))
 
@@ -125,7 +133,7 @@ export function AboutPage() {
               <Carousel
                 items={serviceCarouselItems}
                 baseWidth="100%"
-                aspectRatio={16 / 10}
+                aspectRatio={16 / 11}
                 radius={22}
                 gap={18}
                 peek={28}
@@ -194,14 +202,14 @@ export function AboutPage() {
             title="برای انتخابی آگاهانه به عرفا بپیوندید"
             description="تجربه واقعی فراگیرانی که مسیر یادگیری‌شان را با عرفا ساختند."
           />
-          <AnimatedContent distance={24} duration={0.65} className="mt-10">
+          <AnimatedContent distance={24} duration={0.65} className="mt-10 flex justify-center">
             <Carousel
               items={testimonialCarouselItems}
-              baseWidth="100%"
-              aspectRatio={1.7}
-              radius={24}
-              gap={18}
-              peek={40}
+              baseWidth={420}
+              aspectRatio={1.02}
+              radius={28}
+              gap={16}
+              peek={20}
               effect="slide"
               indicator="dots"
               arrows
@@ -210,7 +218,6 @@ export function AboutPage() {
               pauseOnHover
               loop
               theme="light"
-              className="w-full"
             />
           </AnimatedContent>
         </div>
