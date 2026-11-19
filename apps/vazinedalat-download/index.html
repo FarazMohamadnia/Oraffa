@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دانلود بانک محتوای وایرال — وزین عدالت</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #122a42;
+      --gold: #b8944a;
+      --ink: #1c2026;
+      --muted: #5a626e;
+      --bg: #f6f4ef;
+      --card: #fffefb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: "Vazirmatn", sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(184,148,74,0.18), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(18,42,66,0.12), transparent 50%),
+        var(--bg);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(520px, 100%);
+      background: var(--card);
+      border: 1px solid rgba(18,42,66,0.08);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 20px 50px rgba(18,42,66,0.08);
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(184,148,74,0.12);
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(1.4rem, 4vw, 1.85rem);
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .meta span {
+      font-size: 12px;
+      background: #eef2f6;
+      color: var(--navy);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 360px;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 20px;
+      border-radius: 14px;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover { background: #0d1f33; transform: translateY(-1px); }
+    .btn.secondary {
+      margin-top: 12px;
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid rgba(18,42,66,0.25);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 18px;
+    }
+    .btn.secondary:hover { background: rgba(18,42,66,0.04); }
+    .hint {
+      margin-top: 22px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="badge">@vazinedalat</div>
+    <h1>بانک ۶۰ ایده محتوای وایرال حقوقی</h1>
+    <p>
+      فایل PDF آماده دانلود است. روی دکمه بزنید تا مستقیم ذخیره شود
+      (۱۲ صفحه — قلاب، فرمت، فرمول کپی و CTA).
+    </p>
+    <div class="meta">
+      <span>۱۲ صفحه</span>
+      <span>۶۰ ایده</span>
+      <span>PDF</span>
+      <span>~۵۷ KB</span>
+    </div>
+    <a class="btn" href="./vazinedalat-60-viral-ideas.pdf" download="vazinedalat-60-viral-ideas.pdf">
+      دانلود PDF
+    </a>
+    <a class="btn secondary" href="./vazinedalat-60-viral-ideas.pdf" target="_blank" rel="noopener">
+      باز کردن در مرورگر
+    </a>
+    <p class="hint">
+      اگر دانلود شروع نشد، روی «باز کردن در مرورگر» بزنید و از منوی مرورگر گزینه Save / ذخیره را انتخاب کنید.
+    </p>
+  </main>
+</body>
+</html>
