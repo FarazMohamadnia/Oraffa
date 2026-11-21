@@ -5,8 +5,9 @@ import { dirname, join, extname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const htmlPath = join(__dirname, 'hamafza-pro-pitch-deck.html')
-const outPath = join(__dirname, 'hamafza-pro-pitch-deck.pdf')
+const htmlName = 'oraffa-platform-pitch.html'
+const htmlPath = join(__dirname, htmlName)
+const outPath = join(__dirname, 'oraffa-platform-pitch.pdf')
 const chrome =
   process.env.CHROME_PATH ||
   ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find((p) =>
@@ -43,7 +44,7 @@ const server = createServer((req, res) => {
 
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve))
 const { port } = server.address()
-const target = `http://127.0.0.1:${port}/hamafza-pro-pitch-deck.html?print=1`
+const target = `http://127.0.0.1:${port}/${htmlName}?print=1`
 
 const browser = await puppeteer.launch({
   executablePath: chrome,
@@ -67,8 +68,7 @@ try {
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
   })
 
-  const size = statSync(outPath).size
-  console.log(`Wrote ${outPath} (${Math.round(size / 1024)} KB)`)
+  console.log(`Wrote ${outPath} (${Math.round(statSync(outPath).size / 1024)} KB)`)
 } finally {
   await browser.close()
   server.close()
