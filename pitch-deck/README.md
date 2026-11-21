@@ -4,7 +4,7 @@
 |------|--------|
 | `oraffa-platform-pitch.html` | دِک تعاملی ۱۴ اسلایدی |
 | `oraffa-platform-pitch.pdf` | خروجی PDF |
-| `NARRATIVE.md` | روایت کامل + بیزنس مدل + مراحل اجرا |
+| `NARRATIVE.md` | روایت کامل + مدل کسب‌وکار + مراحل اجرا |
 | `export-pdf.mjs` | بازتولید PDF |
 
 ```bash
