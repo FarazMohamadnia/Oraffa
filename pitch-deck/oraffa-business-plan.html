@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بیزنس‌پلن عرفا | بدون احتساب هزینه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #062033;
+      --blue: #0d5d90;
+      --teal: #139895;
+      --sand: #f7f4ec;
+      --line: rgba(6, 32, 51, 0.1);
+      --copper: #b8894a;
+      --muted: #5a6d78;
+      --font: "Vazirmatn", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #dfe6ea;
+      color: var(--ink);
+      font-family: var(--font);
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      width: min(920px, 100%);
+      margin: 24px auto;
+      background: linear-gradient(180deg, #fffefb 0%, var(--sand) 100%);
+      border: 1px solid rgba(6,32,51,.08);
+      box-shadow: 0 18px 50px rgba(6,32,51,.12);
+      padding: 56px 56px 72px;
+    }
+    h1, h2, h3 { line-height: 1.35; margin: 0 0 12px; }
+    h1 { font-size: 34px; letter-spacing: -0.03em; }
+    h2 {
+      font-size: 22px;
+      color: var(--blue);
+      margin-top: 36px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(19,152,149,.25);
+    }
+    h3 { font-size: 17px; margin-top: 22px; }
+    p { margin: 0 0 12px; font-size: 15px; }
+    ul, ol { margin: 0 0 14px; padding-right: 22px; }
+    li { margin-bottom: 6px; font-size: 14.5px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .lede { font-size: 16.5px; color: #23404d; max-width: 62ch; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 8px;
+    }
+    .pill {
+      display: inline-flex; align-items: center;
+      border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 600;
+      background: rgba(13,93,144,.08); color: var(--blue);
+      border: 1px solid rgba(13,93,144,.14);
+    }
+    .quote {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border-right: 4px solid var(--teal);
+      background: rgba(19,152,149,.07);
+      border-radius: 0 12px 12px 0;
+      font-size: 15px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 14px 0;
+    }
+    .card {
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .card h3 { margin-top: 0; font-size: 15px; }
+    .card p, .card li { font-size: 13.5px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0 8px;
+      font-size: 13.5px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: right;
+      vertical-align: top;
+    }
+    th {
+      background: rgba(13,93,144,.1);
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: rgba(255,255,255,.55); }
+    .rank { font-weight: 800; color: var(--blue); white-space: nowrap; }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .flow .step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      position: relative;
+    }
+    .flow .step span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .cover-block {
+      padding: 8px 0 10px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand-mark {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 18px; margin-bottom: 18px;
+    }
+    .brand-mark .m {
+      width: 34px; height: 34px; border-radius: 10px;
+      display: grid; place-items: center; color: #fff; font-size: 15px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+    }
+    footer.doc {
+      margin-top: 40px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    @media (max-width: 760px) {
+      .page { padding: 28px 20px 40px; margin: 0; border: 0; box-shadow: none; }
+      .grid-2, .flow { grid-template-columns: 1fr; }
+    }
+    @page { size: A4; margin: 14mm; }
+    @media print {
+      body { background: #fff; }
+      .page {
+        width: auto; margin: 0; box-shadow: none; border: 0;
+        padding: 0; background: #fff;
+      }
+      h2 { break-after: avoid; }
+      .card, table, .quote { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <div class="cover-block">
+      <div class="brand-mark"><span class="m">ع</span> عرفا</div>
+      <div class="eyebrow">سند راهبردی · بدون احتساب هزینه‌ها</div>
+      <h1>بیزنس‌پلن عرفا</h1>
+      <p class="lede">مسیری از دانستن تا توانستن؛ از یادگیری تا نتیجه. عرفا آموزشگاه نیست؛ سامانه رشد و اجتماع حرفه‌ای برای کسانی است که می‌خواهند سطح‌شان عوض شود.</p>
+      <div class="meta">
+        <span class="pill">زبان · حقوق · مدیریت</span>
+        <span class="pill">پنل حرفه‌ای عارف</span>
+        <span class="pill">کارت‌های کهن عضویت</span>
+        <span class="pill">کامینیتی محافل</span>
+      </div>
+    </div>
+
+    <h2>۱. خلاصه اجرایی</h2>
+    <p>در دنیایی پر از اطلاعات سطحی و مدرکهای کم‌ارزش، عرفا آمده تا چیزی کمیاب را برگرداند: <strong>شناخت واقعی</strong>. ما باور داریم زبان، حقوق و مدیریت فقط مهارت نیستند؛ ابزار قدرت و آزادی‌اند. کسی که بتواند حرفه‌ای سخن بگوید، قرارداد بنویسد، مذاکره کند و کسب‌وکارش را مدیریت کند، قربانی شرایط نیست؛ شکل‌دهنده شرایط است.</p>
+    <div class="quote">
+      عرفا برای کسانی ساخته شده که نمی‌خواهند فقط «یاد بگیرند»؛ می‌خواهند بفهمند، مسلط شوند و مسیر خودشان را بسازند.<br />
+      ما یک آموزشگاه نیستیم. ما مسیر رشدیم: از دانستن به توانستن، و از توانستن به بودن.
+    </div>
+    <p>محصول عرفا ترکیبی است از <strong>پنل حرفه‌ای</strong> (شبیه لینکدین تخصصی)، <strong>ثبت خودکار مسیر یادگیری</strong>، <strong>کارنامه شواهد</strong>، <strong>نظر دوطرفه</strong>، <strong>کد تخفیف هوشمند</strong> و مهم‌تر از همه <strong>کارت عضویت کهنِ «عارف»</strong> که درِ محافل و اجتماع حرفه‌ای را باز می‌کند.</p>
+
+    <h2>۲. هویت برند و شعار</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>شعارهای اصلی</h3>
+        <ul>
+          <li>از دانستن تا توانستن</li>
+          <li>توانا بود هرکه دانا بود</li>
+          <li>دانا بود هرکه توانا بود</li>
+          <li>عرفا؛ مسیری از یادگیری تا نتیجه</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>وعده برند</h3>
+        <p>ما فقط آموزش نمی‌دهیم؛ کمک می‌کنیم در موقعیت‌هایی که ندانستن می‌تواند به ضررت تمام شود، آگاهانه‌تر و توانمندتر عمل کنی.</p>
+      </div>
+    </div>
+    <p><strong>زنجیره ارزش عرفا:</strong></p>
+    <div class="flow">
+      <div class="step">یاد بگیر<span>آموزش عمیق</span></div>
+      <div class="step">رزومه بساز<span>کارنامه شواهد</span></div>
+      <div class="step">ارتباط بگیر<span>کامینیتی عارفان</span></div>
+      <div class="step">بهره‌وری بساز<span>خروجی واقعی</span></div>
+      <div class="step">نتیجه بگیر<span>فرصت و درآمد</span></div>
+    </div>
+
+    <h2>۳. مسئله و فرصت</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>مسئله</h3>
+        <ul>
+          <li>مدرکهای سطحی بدون شواهد عملکرد</li>
+          <li>پراکندگی دوره، نمره، پروژه و نظر استاد</li>
+          <li>نبود اجتماع حرفه‌ای قابل‌اعتماد برای دیدار و همکاری</li>
+          <li>هزینه پنهان «ندانستن» در مدیریت، وکالت و ارتباطات</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>فرصت</h3>
+        <ul>
+          <li>تبدیل یادگیری به هویت قابل‌اثبات</li>
+          <li>ساخت کامینیتی لایه‌بندی‌شده با کارت عضویت</li>
+          <li>اتصال آموزش به رزومه، ارتباط و نتیجه</li>
+          <li>جذب مخاطب باکیفیت از مسیر محتوای نگرشی</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>۴. راه‌حل محصول</h2>
+    <ol>
+      <li><strong>پنل حرفه‌ای عارف:</strong> هر عضو با عنوان «عارف + نام» شناخته می‌شود؛ مثلاً عارف محمدرضا علیزاده.</li>
+      <li><strong>ثبت مسیر یادگیری:</strong> دوره‌ها همراه نمره، پروژه، وضعیت و نظر استاد به‌صورت خودکار در پنل ثبت می‌شوند.</li>
+      <li><strong>کارنامه شواهد:</strong> بسته قابل‌اشتراک برای کارفرما و همکاران، به‌جای مدرک ایستا.</li>
+      <li><strong>نظر دوطرفه:</strong> فراگیر درباره دوره و استاد درباره عملکرد فراگیر.</li>
+      <li><strong>کد تخفیف هوشمند:</strong> رشد معرفی بر پایه اعتبار و سطح کارت.</li>
+      <li><strong>کارت کهن عضویت:</strong> کلید ورود به محافل، نشست‌ها و دیدار با افراد بالاتر.</li>
+    </ol>
+
+    <h2>۵. ما عرفایی هستیم؛ هویت عضو</h2>
+    <p>در عرفا به‌جای «کاربر» از واژه <strong>عارف</strong> استفاده می‌شود. جمع اعضا، <strong>عرفایی‌ها</strong> هستند. این نام فقط برچسب نیست؛ قرارداد فرهنگی است: عضو می‌خواهد بفهمد، مسلط شود و در اجتماع رشد کند.</p>
+    <div class="quote">
+      مثال نمایش هویت:<br />
+      <strong>عارف محمدرضا علیزاده</strong> · کارت: عارفِ توانا · حوزه: حقوق و مذاکره
+    </div>
+
+    <h2>۶. نظام کارت‌های کهن عرفا</h2>
+    <p>کارت عضویت ابزار کامینیتی است، نه فقط نشان تزئینی. هر کارت سطح دسترسی به محافل را مشخص می‌کند. افراد تلاش می‌کنند رتبه بالاتر بگیرند تا بتوانند در جمع‌های خاص‌تر حاضر شوند و با افراد مهم‌تر دیدار کنند.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>رده</th>
+          <th>نام کارت (کهن)</th>
+          <th>معنا</th>
+          <th>دسترسی محافل</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="rank">۱</td>
+          <td><strong>عارفِ جوینده</strong></td>
+          <td>آغاز مسیر شناخت</td>
+          <td>محافل آشنایی و جلسات معرفی کوچک</td>
+        </tr>
+        <tr>
+          <td class="rank">۲</td>
+          <td><strong>عارفِ رهرو</strong></td>
+          <td>حرکت پیوسته در مسیر</td>
+          <td>حلقه‌های یادگیری عمومی</td>
+        </tr>
+        <tr>
+          <td class="rank">۳</td>
+          <td><strong>عارفِ پژوهنده</strong></td>
+          <td>عمق‌جویی و تمرین</td>
+          <td>کارگاه‌های تخصصی ورودی</td>
+        </tr>
+        <tr>
+          <td class="rank">۴</td>
+          <td><strong>عارفِ دانا</strong></td>
+          <td>فهم ساختارمند</td>
+          <td>نشست‌های موضوعی حقوق، زبان و مدیریت</td>
+        </tr>
+        <tr>
+          <td class="rank">۵</td>
+          <td><strong>عارفِ توانا</strong></td>
+          <td>تبدیل دانستن به عمل</td>
+          <td>محافل پروژه و مهارت کاربردی</td>
+        </tr>
+        <tr>
+          <td class="rank">۶</td>
+          <td><strong>عارفِ رایزن</strong></td>
+          <td>مشورت و هم‌افزایی</td>
+          <td>حلقه مشاوران و هم‌اندیشی‌های محدود</td>
+        </tr>
+        <tr>
+          <td class="rank">۷</td>
+          <td><strong>عارفِ راهبر</strong></td>
+          <td>هدایت مسیر و تصمیم</td>
+          <td>محافل مدیریتی و مذاکره پیشرفته</td>
+        </tr>
+        <tr>
+          <td class="rank">۸</td>
+          <td><strong>عارفِ معمار</strong></td>
+          <td>ساخت سیستم و مسیر دیگران</td>
+          <td>جلسات راهبردی با ظرفیت محدود</td>
+        </tr>
+        <tr>
+          <td class="rank">۹</td>
+          <td><strong>عارفِ حکیم</strong></td>
+          <td>پختگی و انتقال تجربه</td>
+          <td>محافل ویژه استادان و پیشکسوتان</td>
+        </tr>
+        <tr>
+          <td class="rank">۱۰</td>
+          <td><strong>عارفِ والا</strong></td>
+          <td>بالاترین سطح اعتبار عرفایی</td>
+          <td>محافل خاص و دیدار با افراد کلیدی</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">ارتقا فقط با خرید نیست؛ با تکمیل مسیر یادگیری، کیفیت خروجی، مهر استاد، حضور مؤثر در محافل و معرفی هدفمند به‌دست می‌آید. کمیابی رده‌های بالا باید حفظ شود تا ارزش کارت بماند.</p>
+
+    <h2>۷. مدل کسب‌وکار (بدون رقم هزینه)</h2>
+    <p>عرفا روی <strong>انباشت هویت + دسترسی اجتماعی</strong> پول درمی‌آورد، نه فقط فروش تک‌دوره‌ای.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>لایه</th>
+          <th>شرح</th>
+          <th>نقش در سیستم</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>آموزش</td>
+          <td>دوره‌ها و مسیرهای زبان، حقوق و مدیریت</td>
+          <td>ورودی اصلی رشد عارف</td>
+        </tr>
+        <tr>
+          <td>عضویت و کارت</td>
+          <td>سطوح کهن عارف + کارت دیجیتال و فیزیکی</td>
+          <td>هویت، دسترسی محافل، نگهداشت</td>
+        </tr>
+        <tr>
+          <td>محافل و رویداد</td>
+          <td>ثبت‌نام در نشست‌ها بر اساس رتبه کارت</td>
+          <td>کامینیتی و تمایز اجتماعی</td>
+        </tr>
+        <tr>
+          <td>سازمانی</td>
+          <td>توانمندسازی تیم‌ها و پایش پیشرفت نیروها</td>
+          <td>مقیاس B2B</td>
+        </tr>
+        <tr>
+          <td>شبکه استادان</td>
+          <td>مسیرهای مشترک و اعتبار محتوایی</td>
+          <td>کیفیت و عرضه</td>
+        </tr>
+        <tr>
+          <td>فرصت و همکاری</td>
+          <td>اتصال پروژه‌ها و فرصت‌ها به کارنامه شواهد</td>
+          <td>لایه مرحله بعد</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="quote">
+      حلقه ارزش: آموزش ← ثبت شواهد در پنل ← ارتقای کارت عارف ← ورود به محافل بالاتر ← معرفی و جذب افراد جدید ← آموزش بیشتر.
+    </div>
+
+    <h2>۸. مخاطبان هدف</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>عارفان اصلی</h3>
+        <ul>
+          <li>مدیران و کارآفرینانی که از فرصت‌ها جا مانده‌اند</li>
+          <li>وکلایی که ضعف مهارتی به شکست پرونده یا مذاکره منجر شده</li>
+          <li>کسانی که زبان می‌دانند اما قدرت تصمیم و قرارداد ندارند</li>
+          <li>افرادی که مدرک دارند اما عمق و شبکه ندارند</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>مخاطب ثانویه</h3>
+        <ul>
+          <li>استادان و شرکای محتوا</li>
+          <li>دفاتر حقوقی و مؤسسات مشاوره</li>
+          <li>شرکت‌های کوچک و متوسط برای رشد تیم</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>۹. ستون محتوایی: بینش و نگرش</h2>
+    <p>صفحه اصلی عرفا باید کمتر دنبال لایک آسان برود و بیشتر فالوور وفادار و باکیفیت بسازد. لحن: صریح، عمیق، گاه تلخِ مفید.</p>
+    <ul>
+      <li>«دانش سطحی خطرناک‌تر از بی‌دانشی است.»</li>
+      <li>«تخصص بدون عمق، فقط ابزاری است که سریع از مد می‌افتد.»</li>
+      <li>«کسی که فقط زبان بلد است، مترجم است. کسی که زبان + حقوق + مدیریت بلد است، تصمیم‌گیرنده است.»</li>
+      <li>«عرفا برای کسانی نیست که می‌خواهند سریع مدرک بگیرند. برای کسانی است که می‌خواهند سطح‌شان عوض شود.»</li>
+    </ul>
+
+    <h2>۱۰. راهبرد تبلیغات و جذب</h2>
+    <p>پیام تبلیغاتی روی <strong>معایب ندانستن</strong> و سپس مسیر <strong>متوجه‌شدن ← یادگیری ← توانا شدن</strong> تمرکز می‌کند.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>زاویه‌های فشار مسئله</h3>
+        <ul>
+          <li>مدیران ناموفق به‌خاطر ضعف مهارت و تصمیم</li>
+          <li>از دست رفتن فرصت‌ها به‌دلیل بلد نبودن زبان حرفه‌ای</li>
+          <li>شکست وکلا به‌خاطر نابلد بودن در مهارت‌های کاربردی</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>زاویه رهایی</h3>
+        <ul>
+          <li>فهم خطر ندانستن</li>
+          <li>ورود به مسیر عمیق عرفا</li>
+          <li>ساخت نمایه، ارتقای کارت، حضور در محافل</li>
+          <li>تبدیل دانستن به نتیجه</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>۱۱. ورود به بازار و رشد</h2>
+    <ol>
+      <li><strong>شروع باریک:</strong> یک حوزه اول (ترجیحاً حقوق یا مسیر ترکیبی پرخطر/پرارزش).</li>
+      <li><strong>ساخت هسته عرفایی:</strong> چند استاد شاخص + دوره‌های خروجی‌محور + اولین محافل کوچک.</li>
+      <li><strong>فعال‌سازی کارت:</strong> ارتقا از جوینده تا توانا با شواهد واقعی، نه شعار.</li>
+      <li><strong>کمیابی محافل بالا:</strong> رده‌های ۸ تا ۱۰ ظرفیت محدود و دعوت‌محور.</li>
+      <li><strong>گسترش:</strong> مدیریت و زبان روی همان هویت عارف و همان نظام کارت.</li>
+    </ol>
+
+    <h2>۱۲. نقشه اجرای مرحله‌ای</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>مرحله</th>
+          <th>تمرکز</th>
+          <th>خروجی کلیدی</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>۰ · پایه‌گذاری</td>
+          <td>روایت برند، لحن محتوا، تعریف رتبه‌های کارت</td>
+          <td>صفحه معرفی، فهرست انتظار، منشور عرفایی</td>
+        </tr>
+        <tr>
+          <td>۱ · نسخه کوچک</td>
+          <td>پنل عارف + ثبت دوره و نمره + نمایه</td>
+          <td>اولین عارفان فعال با کارنامه شواهد</td>
+        </tr>
+        <tr>
+          <td>۲ · اعتماد و اجتماع</td>
+          <td>کارت دیجیتال کهن + نظر دوطرفه + محافل سطح پایین</td>
+          <td>اولین ارتقاها و نشست‌های اختصاصی کارت</td>
+        </tr>
+        <tr>
+          <td>۳ · شبکه کامل</td>
+          <td>کارت فیزیکی، محافل خاص، سازمانی، فرصت‌ها</td>
+          <td>کامینیتی لایه‌بندی‌شده تا عارف والا</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>۱۳. شاخص‌های موفقیت (غیرهزینه‌ای)</h2>
+    <ul>
+      <li>نرخ تکمیل نمایه عارف و ثبت حداقل یک دستاورد</li>
+      <li>نرخ ارتقای کارت از جوینده به رهرو و بالاتر</li>
+      <li>نرخ حضور در محافل بر اساس سطح کارت</li>
+      <li>کیفیت نظر استاد و رضایت از عمق دوره</li>
+      <li>نرخ اشتراک پرونده شواهد و معرفی طبیعی</li>
+      <li>نسبت فالوور درگیر با محتوای نگرشی به فالوور گذری</li>
+      <li>میزان تلاش اعضا برای رسیدن به محافل بالاتر (صف انتظار، درخواست ارتقا)</li>
+    </ul>
+
+    <h2>۱۴. اصول حاکم بر عرفا</h2>
+    <ol>
+      <li>عمق بر سرعت اولویت دارد.</li>
+      <li>مدرک بدون شواهد بی‌ارزش است.</li>
+      <li>کارت عضویت باید کمیاب، معنادار و دست‌یافتنی با تلاش باشد.</li>
+      <li>محافل بالاتر باید واقعاً خاص‌تر باشند.</li>
+      <li>محتوا برای جذب آدم درست است، نه فقط عدد.</li>
+      <li>هدف نهایی: از دانستن به توانستن، و از توانستن به بودن.</li>
+    </ol>
+
+    <div class="quote">
+      عرفا مسیری است از یادگیری تا نتیجه:<br />
+      یاد بگیر، رزومه بساز، ارتباط بگیر، بهره‌وری ایجاد کن، نتیجه بگیر.
+    </div>
+
+    <footer class="doc">
+      عرفا · بیزنس‌پلن راهبردی · نسخه بدون احتساب هزینه‌ها · محرمانه برای تیم و شرکا
+    </footer>
+  </article>
+</body>
+</html>
