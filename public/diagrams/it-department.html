@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>دپارتمان IT عرفا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand: #0d5d90;
+      --brand-deep: #08486f;
+      --brand-ink: #06263a;
+      --teal: #139895;
+      --teal-deep: #0e7573;
+      --accent: #c47a2c;
+      --paper: #f3f7fa;
+      --ink: #102433;
+      --muted: #4b6270;
+      --line: #d5e2ea;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Vazirmatn", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 900px 500px at 85% -5%, rgba(19, 152, 149, 0.18), transparent 55%),
+        radial-gradient(ellipse 800px 480px at 5% 15%, rgba(13, 93, 144, 0.22), transparent 50%),
+        radial-gradient(ellipse 600px 400px at 50% 100%, rgba(196, 122, 44, 0.08), transparent 45%),
+        linear-gradient(165deg, #f7fbfd 0%, var(--paper) 42%, #e8f2f6 100%);
+      padding: 48px 24px 64px;
+      overflow-x: hidden;
+    }
+
+    .stage {
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Header */
+    .hero {
+      text-align: center;
+      margin-bottom: 52px;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(13, 93, 144, 0.08);
+      border: 1px solid rgba(13, 93, 144, 0.16);
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(19, 152, 149, 0.2);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--brand-ink);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(120deg, var(--brand) 0%, var(--teal) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Central hub + connectors */
+    .orbit {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 960px) {
+      .orbit {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        align-items: stretch;
+        padding-top: 36px;
+      }
+    }
+
+    .hub-rail {
+      display: none;
+    }
+
+    @media (min-width: 960px) {
+      .hub-rail {
+        display: block;
+        position: relative;
+        height: 2px;
+        margin: 0 8% 0;
+        background: linear-gradient(90deg, transparent, rgba(13, 93, 144, 0.35), rgba(19, 152, 149, 0.45), rgba(13, 93, 144, 0.35), transparent);
+        z-index: 0;
+      }
+
+      .hub-rail::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--teal);
+        box-shadow: 0 0 0 6px rgba(19, 152, 149, 0.18), 0 0 24px rgba(19, 152, 149, 0.35);
+      }
+
+      .orbit {
+        margin-top: -1px;
+        padding-top: 28px;
+      }
+    }
+
+    /* Pillars */
+    .pillar {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+      border: 1px solid rgba(213, 226, 234, 0.9);
+      border-radius: 28px;
+      padding: 28px 24px 26px;
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.8) inset,
+        0 18px 40px -24px rgba(8, 72, 111, 0.35);
+      overflow: hidden;
+    }
+
+    .pillar::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: var(--accent-line);
+    }
+
+    .pillar::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      top: -80px;
+      left: -60px;
+      background: var(--glow);
+      filter: blur(40px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .pillar[data-tone="build"] {
+      --accent-line: linear-gradient(90deg, var(--brand), #3a8bb8);
+      --glow: rgba(13, 93, 144, 0.28);
+      --chip: rgba(13, 93, 144, 0.1);
+      --chip-text: var(--brand-deep);
+      --num: var(--brand);
+    }
+
+    .pillar[data-tone="learn"] {
+      --accent-line: linear-gradient(90deg, var(--teal), #4bc4c1);
+      --glow: rgba(19, 152, 149, 0.3);
+      --chip: rgba(19, 152, 149, 0.12);
+      --chip-text: var(--teal-deep);
+      --num: var(--teal-deep);
+    }
+
+    .pillar[data-tone="rd"] {
+      --accent-line: linear-gradient(90deg, var(--accent), #d9a05a);
+      --glow: rgba(196, 122, 44, 0.22);
+      --chip: rgba(196, 122, 44, 0.12);
+      --chip-text: #8a5418;
+      --num: #a8641f;
+    }
+
+    .pillar-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .icon-wrap {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--chip);
+      color: var(--num);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .icon-wrap svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .pillar-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pillar-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--num);
+      margin-bottom: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .pillar h2 {
+      font-size: 1.28rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--brand-ink);
+      margin-bottom: 6px;
+    }
+
+    .pillar-lead {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .items li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(243, 247, 250, 0.85);
+      border: 1px solid rgba(213, 226, 234, 0.7);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .items li:hover {
+      transform: translateX(-4px);
+      background: var(--white);
+      border-color: rgba(13, 93, 144, 0.22);
+    }
+
+    .bullet {
+      flex-shrink: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--num);
+      box-shadow: 0 0 0 3px var(--chip);
+    }
+
+    .flow {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 8px;
+    }
+
+    .flow-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--brand-deep);
+    }
+
+    .flow-arrow {
+      color: var(--teal);
+      font-size: 1.1rem;
+      opacity: 0.7;
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(19, 152, 149, 0.2); }
+      50% { box-shadow: 0 0 0 8px rgba(19, 152, 149, 0.08); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-badge .dot { animation: none; }
+    }
+
+    /* Print / export friendly */
+    @media print {
+      body { background: white; padding: 24px; }
+      .pillar { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <header class="hero">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        مؤسسه علمی آموزشی عرفا · Orrafa
+      </div>
+      <h1>دپارتمان <span>IT</span> عرفا</h1>
+      <p>سه رکن هم‌افزا برای آموزش فناوری، ساخت محصول و پیشبرد تحقیق و توسعه</p>
+    </header>
+
+    <div class="hub-rail" aria-hidden="true"></div>
+    <section class="orbit" aria-label="ساختار دپارتمان IT">
+
+      <!-- 1. Product -->
+      <article class="pillar" data-tone="build">
+        <div class="pillar-head">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" />
+              <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" />
+            </svg>
+          </div>
+          <div class="pillar-meta">
+            <div class="pillar-num">۰۱ · ساخت</div>
+            <h2>توسعه و ساخت محصول</h2>
+            <p class="pillar-lead">ساخت استارتاپ و محصول بر اساس نیاز واقعی بازار</p>
+          </div>
+        </div>
+        <ul class="items">
+          <li><span class="bullet" aria-hidden="true"></span>شناسایی نیاز بازار و فرصت‌های محصولی</li>
+          <li><span class="bullet" aria-hidden="true"></span>اعتبارسنجی ایده و طراحی مدل کسب‌وکار</li>
+          <li><span class="bullet" aria-hidden="true"></span>ساخت MVP و لانچ استارتاپ‌محور</li>
+          <li><span class="bullet" aria-hidden="true"></span>توسعه محصول دیجیتال قابل مقیاس</li>
+          <li><span class="bullet" aria-hidden="true"></span>همراهی تیم محصول تا ورود به بازار</li>
+        </ul>
+      </article>
+
+      <!-- 2. Education -->
+      <article class="pillar" data-tone="learn">
+        <div class="pillar-head">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              <path d="M8 7h8M8 11h6" />
+            </svg>
+          </div>
+          <div class="pillar-meta">
+            <div class="pillar-num">۰۲ · آموزش</div>
+            <h2>آموزش</h2>
+            <p class="pillar-lead">مسیرهای تخصصی فناوری‌های نوین و کاربردی</p>
+          </div>
+        </div>
+        <ul class="items">
+          <li><span class="bullet" aria-hidden="true"></span>بلاکچین و زیرساخت Web3</li>
+          <li><span class="bullet" aria-hidden="true"></span>هوش مصنوعی و کاربردهای عملی</li>
+          <li><span class="bullet" aria-hidden="true"></span>امنیت قرارداد هوشمند (Smart Contract)</li>
+          <li><span class="bullet" aria-hidden="true"></span>توسعه نرم‌افزار و معماری محصول</li>
+          <li><span class="bullet" aria-hidden="true"></span>امنیت سایبری و بهترین روش‌های دفاعی</li>
+        </ul>
+      </article>
+
+      <!-- 3. R&D -->
+      <article class="pillar" data-tone="rd">
+        <div class="pillar-head">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" />
+            </svg>
+          </div>
+          <div class="pillar-meta">
+            <div class="pillar-num">۰۳ · تحقیق</div>
+            <h2>تحقیق و توسعه</h2>
+            <p class="pillar-lead">بهبود مستمر و ساخت دوره و محصول جدید</p>
+          </div>
+        </div>
+        <ul class="items">
+          <li><span class="bullet" aria-hidden="true"></span>بهبود و به‌روزرسانی دوره‌های فعلی</li>
+          <li><span class="bullet" aria-hidden="true"></span>طراحی دوره و محصول آموزشی جدید</li>
+          <li><span class="bullet" aria-hidden="true"></span>پژوهش فناوری‌های نوظهور</li>
+          <li><span class="bullet" aria-hidden="true"></span>آزمایشگاه نوآوری و نمونه‌سازی</li>
+          <li><span class="bullet" aria-hidden="true"></span>تبدیل یافته‌های تحقیق به مسیر یادگیری</li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="flow" aria-label="چرخه ارزش">
+      <span class="flow-step">نیاز بازار</span>
+      <span class="flow-arrow" aria-hidden="true">←</span>
+      <span class="flow-step">آموزش تخصصی</span>
+      <span class="flow-arrow" aria-hidden="true">←</span>
+      <span class="flow-step">ساخت محصول</span>
+      <span class="flow-arrow" aria-hidden="true">←</span>
+      <span class="flow-step">تحقیق و توسعه</span>
+      <span class="flow-arrow" aria-hidden="true">←</span>
+      <span class="flow-step">بهبود مستمر</span>
+    </div>
+
+    <p class="footer-note">دپارتمان IT عرفا · هم‌افزایی آموزش، محصول و نوآوری</p>
+  </main>
+</body>
+</html>
